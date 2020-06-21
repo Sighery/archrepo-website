@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sighery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Information on Sighery's Arch Linux repository">
+</head>
+<body>
+<h1>Sighery's Arch Linux repository</h1>
+<p>This is an Arch Linux repository holding some packages I either forked and
+run, or some packages from the AUR I often use.</p>
+<p>For now this is all manual.</p>
+<h3>Adding the repo</h3>
+<h4>Adding the keys</h4>
+<p>I'm still working through all this. But basically, this is the key I use to
+sign the packages I build. These are the corresponding <code>.sig</code> files
+to each <code>.tar.xz</code> package. I think this step is needed. Not sure
+yet. Arch Linux documentation is kinda confusing on this, and I have no
+previous experience with GPG.</p>
+<pre>
+pacman-key --keyserver eu.pool.sks-keyservers.net --recv-key '9454 A24E 1B5E 9630 78B6  E931 7C02 D106 83AD CFB8'
+pacman-key --lsign-key '9454 A24E 1B5E 9630 78B6  E931 7C02 D106 83AD CFB8'
+</pre>
+<h4>Adding my repository source</h4>
+<p>You have to add these lines to your <code>/etc/pacman.conf</code> file:</p>
+<pre>
+[sighery-archrepo]
+Server = https://archrepo.sighery.com/$arch
+</pre>
+<p>You then run <code>pacman -Syy</code> to update the repo list.</p>
+<h4>Current packages</h4>
+<p>Currently only <code>x86_64</code> packages are built. All the available
+packages can be seen at the
+<a href="https://archrepo.sighery.com/x86_64/">x86_64</a> route.</p>
+</body>
+</html>
