@@ -14,9 +14,9 @@ run, or some packages from the AUR I often use.</p>
 <h4>Adding the keys</h4>
 <p>I'm still working through all this. But basically, this is the key I use to
 sign the packages I build. These are the corresponding <code>.sig</code> files
-to each <code>.tar.xz</code> package. I think this step is needed. Not sure
-yet. Arch Linux documentation is kinda confusing on this, and I have no
-previous experience with GPG.</p>
+to each <code>.tar.xz</code>/<code>.tar.zst</code> package. I think this step
+is needed. Not sure yet. Arch Linux documentation is kinda confusing on this,
+and I have no previous experience with GPG.</p>
 <pre>
 pacman-key --keyserver eu.pool.sks-keyservers.net --recv-key '9454 A24E 1B5E 9630 78B6  E931 7C02 D106 83AD CFB8'
 pacman-key --lsign-key '9454 A24E 1B5E 9630 78B6  E931 7C02 D106 83AD CFB8'
