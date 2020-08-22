@@ -9,17 +9,18 @@
 <h1>Sighery's Arch Linux repository</h1>
 <p>This is an Arch Linux repository holding some packages I either forked and
 run, or some packages from the AUR I often use.</p>
-<p>For now this is all manual.</p>
-<h3>Adding the repo</h3>
+<p>This is all
+<a target="_blank" href="https://github.com/Sighery?tab=repositories&q=-archbuild">
+mostly automated</a>.</p>
+<h3>Adding the repository</h3>
 <h4>Adding the keys</h4>
-<p>I'm still working through all this. But basically, this is the key I use to
-sign the packages I build. These are the corresponding <code>.sig</code> files
-to each <code>.tar.xz</code>/<code>.tar.zst</code> package. I think this step
-is needed. Not sure yet. Arch Linux documentation is kinda confusing on this,
-and I have no previous experience with GPG.</p>
+<p>Each package is signed with a PGP subkey I use. The database for the
+repository itself is also signed with that same PGP subkey. As such, this key
+must be imported for Pacman to verify any database update and/or package you
+install from this repository has been signed by me.</p>
 <pre>
-pacman-key --keyserver eu.pool.sks-keyservers.net --recv-key '9454 A24E 1B5E 9630 78B6  E931 7C02 D106 83AD CFB8'
-pacman-key --lsign-key '9454 A24E 1B5E 9630 78B6  E931 7C02 D106 83AD CFB8'
+pacman-key --keyserver eu.pool.sks-keyservers.net --recv-key '9454A24E1B5E963078B6E9317C02D10683ADCFB8'
+pacman-key --lsign-key '9454A24E1B5E963078B6E9317C02D10683ADCFB8'
 </pre>
 <h4>Adding my repository source</h4>
 <p>You have to add these lines to your <code>/etc/pacman.conf</code> file:</p>
